@@ -33,7 +33,7 @@ void setup() {
   uint32_t dt = millis();
   QRCode qrcode;
   uint8_t qrcodeData[qrcode_getBufferSize(3)];
-  qrcode_initText(&qrcode, qrcodeData, 3, 3, "TESTTEST");
+  qrcode_initText(&qrcode, qrcodeData, 3, 3, "197");
 
   dt = millis() - dt;
   tft.fillScreen(WHITE);
@@ -45,7 +45,7 @@ void setup() {
             // Print each module (UTF-8 \u2588 is a solid block)
             if(qrcode_getModule(&qrcode, x, y))
             {
-              tft.fillRect(x*7, y*7, 7, 7, BLACK);  
+              tft.fillRect(x*7+18, y*7+58, 7, 7, BLACK);  
             }
             else
             {
